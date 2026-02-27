@@ -46,12 +46,11 @@ y_pred = model.predict(X_test)
 
 
 
-# Function to predict resolution time for new data
 def predict_resolution_time(new_data):
     df_new = pd.DataFrame(new_data)
     return model.predict(df_new)
 
-# Example test case
+
 new_test_data = [{
     "Severity_Score": 5.2,
     "Complaint_Category": "Drainage",
