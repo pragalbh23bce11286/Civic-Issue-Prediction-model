@@ -1,47 +1,119 @@
-# Civic-Issue-Prediction-model
+# Civic Issue Resolution Time Prediction System
+Project Overview:
 
-This project implements a machine learning model to predict the estimated time (in days) required to resolve civic issues based on complaint severity, category, historical frequency, and required resources. The goal is to help civic authorities prioritize issues, allocate resources efficiently, and improve response times.
+This project predicts the estimated resolution time (in days) for civic complaints using Machine Learning.
 
-# Features Used:
+It helps municipalities and smart city systems:
 
-Severity_Score – Numeric score representing the seriousness of the issue
+Prioritize issues efficiently
 
-Complaint_Category – Type of civic issue (e.g., Drainage, Roads, Electricity)
+Allocate resources better
 
-Historical_Frequency – Number of similar complaints reported previously
+Improve service delivery time
 
-Required_Resources – Resources needed for resolution (e.g., Workers, Machinery)
+Analyze historical complaint trends
 
-Target Variable:
+The model is built using a Random Forest Regressor with proper preprocessing pipelines.
 
-Estimated_Resolution_Time_Days – Number of days required to resolve the issue
+# Features
 
-# Model Overview:
+Predicts resolution time for new complaints
 
-Algorithm: Random Forest Regressor
+Handles categorical + numerical data
 
-Problem Type: Regression
+Uses Pipeline for clean ML workflow
 
-Frameworks Used: Scikit-learn, Pandas, NumPy
+Includes preprocessing (Scaling + OneHotEncoding)
 
-The model uses a preprocessing pipeline that:
+Easily extendable for smart city dashboards
 
-Standardizes numerical features using StandardScaler
+# Dataset Description
 
-Encodes categorical features using OneHotEncoder
+File: civic_issue_dataset.csv
 
-Combines preprocessing and model training using Pipeline
+Columns
+Feature	                                Description
+Severity_Score               	    Complaint severity (1–10)
+Complaint_Category	              Type of civic issue
+Historical_Frequency	            Past occurrence count
+Required_Resources	              Resource type required
+Estimated_Resolution_Time_Days	  Target variable
 
-# Project Workflow
+# Machine Learning Workflow
+1️. Data Preprocessing
 
-Load the dataset from a CSV file
+Missing value removal
 
-Remove rows with missing values
+Feature selection
 
-Split data into training and testing sets (80/20 split)
+Train-test split (80/20)
 
-Preprocess numerical and categorical features
+2️. Feature Engineering
 
-Train a Random Forest regression model
+StandardScaler → Numerical features
 
-Predict resolution time for unseen data
+OneHotEncoder → Categorical features
+
+3️. Model
+
+RandomForestRegressor (100 estimators)
+
+4️. Evaluation Metrics
+
+MAE (Mean Absolute Error)
+
+MSE (Mean Squared Error)
+
+R² Score
+
+# Tech Stack
+
+Python
+
+Pandas
+
+NumPy
+
+Scikit-learn
+
+# Installation
+pip install pandas numpy scikit-learn
+
+# Project Architecture
+Dataset → Preprocessing → Feature Encoding → Random Forest → Prediction
+
+# Possible Improvements
+
+Add time-based seasonality feature
+
+Use XGBoost / LightGBM
+
+Deploy with Streamlit / Flask
+
+Connect to real-time complaint API
+
+Build Smart City Dashboard
+
+Add priority classification model
+
+# Real-World Applications
+
+Municipal corporations
+
+Smart city initiatives
+
+Government analytics
+
+Urban planning departments
+
+Public grievance management systems
+
+# Future Scope
+
+Real-time complaint tracking
+
+Geo-location integration
+
+Automated resource optimization
+
+Multi-city comparative analytics
